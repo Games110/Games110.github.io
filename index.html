@@ -3,7 +3,32 @@
 <html>
 
 <head>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP Logger</title>
+</head>
+<body>
+    <h1>Welcome to my website</h1>
+    <p>Your IP address is: <span id="ip-address">Fetching...</span></p>
+    
+    <script>
+    // Fetch visitor's IP using a public API
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        // Log IP in the browser console (optional)
+        console.log("Visitor's IP Address: ", data.ip);
+        
+        // Display the IP on the webpage
+        document.getElementById('ip-address').innerText = data.ip;
+      })
+      .catch(error => {
+        console.error('Error fetching IP:', error);
+        document.getElementById('ip-address').innerText = 'Error fetching IP';
+      });
+    </script>
+</body>
+</html>
 </head>
 
 <body style="background-color: black;">
