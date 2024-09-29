@@ -3,7 +3,32 @@
 <html>
 
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Logger</title>
+</head>
+<body>
+    <h1>Welcome to my website</h1>
+    
+    <script>
+    // Fetch visitor's IP using a public API
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        console.log("Visitor's IP Address: ", data.ip);
+        
+        // Send the IP to the server (if needed)
+        fetch('log_ip.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ ip: data.ip }),
+        });
+      });
+    </script>
+</body>
+</html>
 </head>
 
 <body style="background-color: black;">
