@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IP Logger</title>
 </head>
+
 <body style="background-color: black;">
-    <h1>Welcome to my website</h1>
-    <p><style color="white">Your IP address is: <span id="ip-address">Fetching...</span></p>
+  <h1 style="color: white;">Welcome to my website</h1>
+  <p style="color: white;">Your IP address is: <span id="ip-address">Fetching...</span></p>
     
-    <script>
+  <script>
     // Fetch visitor's IP using a public API
     fetch('https://api.ipify.org?format=json')
       .then(response => response.json())
@@ -26,27 +25,18 @@
         console.error('Error fetching IP:', error);
         document.getElementById('ip-address').innerText = 'Error fetching IP';
       });
-    </script>
+  </script>
 
-      <font size="10" color="green"><h1><b><ins><big>This is my website</big></ins></b></h1></font>
+  <h1 style="font-size: 40px; color: green;"><b><ins>This is my website</ins></b></h1>
   <hr>
   <br>
-  <a href="https://games110.github.io">
-    
-    <font size="8" color="green">my website</font>
-     
-  </a> 
-  <br>
-  <br>
-  <a href="page2.html">
 
-    <font size="8" color="green">Taylor Swift's latest song</font>
-  </a>
-  <br>
-  <br>
-  <img src="1000006650-removebg-preview.png" height="700">
+  <a href="https://games110.github.io" style="font-size: 32px; color: green;">my website</a> 
+  <br><br>
+  <a href="page2.html" style="font-size: 32px; color: green;">Taylor Swift's latest song</a>
+  <br><br>
+
+  <img src="1000006650-removebg-preview.png" height="700" alt="Image">
+
 </body>
 </html>
-</head>
-
-
